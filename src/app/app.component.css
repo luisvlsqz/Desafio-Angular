@@ -1,0 +1,24 @@
+.fondo{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+}
+
+button{
+    margin: 3%;
+}
+
+.mar {
+    margin: 3%;
+}
+
+.tab {
+    background: #2d3130d1;
+    padding: 45px;
+}

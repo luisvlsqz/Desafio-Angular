@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="fondo">
+<img class="img" src="https://los40.com/los40/imagenes/2019/01/31/album/1548938671_813356_1548938705_album_normal.jpg" alt="">
+</div>
+
+<div class="container">
+  <!-- Content here -->
+
+    <button type="button" class="btn btn-success m-25px" (click)="getAllAlumnos()">Estudiantes</button>
+    <button type="button" class="btn btn-success m-25px" (click)="getAllProfesores()">Profesores</button>
+
+    <div class="btn-group mar">
+      <button type="button" class="btn btn-success dropdown-toggle m-25px"
+              data-toggle="dropdown">
+        Casas <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu bg-success px-2" role="menu">
+        <li><a class="text-white" href="Slytherin" (click)="$event.preventDefault();getAllCasas('slytherin')">slytherin</a></li>
+        <li><a class="text-white" href="Gryffindor" (click)="$event.preventDefault();getAllCasas('gryffindor')">gryffindor</a></li>
+        <li><a class="text-white" href="Ravenclaw" (click)="$event.preventDefault();getAllCasas('ravenclaw')">ravenclaw</a></li>
+        <li><a class="text-white" href="Hufflepuff" (click)="$event.preventDefault();getAllCasas('hufflepuff')">hufflepuff</a></li>
+      </ul>
+    </div> 
+    <button type="button" class="btn btn-success m-25px" (click)="getSolicitud()">Nueva solicitud</button>
+
+</div>
+
+<div class="container tab" *ngIf="show">
+
+  <table class="table text-white">
+      <thead>
+          <tr>              
+              <th scope="col">Name</th>
+              <th scope="col">Patronus</th>
+              <th scope="col">Age</th>
+              <th scope="col">Image</th>  
+          </tr>
+      </thead>
+      <tbody>
+
+          <tr *ngFor= "let todo of todos">
+            
+                  <td>{{todo.name}}</td>
+                  <td>{{todo.patronus}}</td>
+                  <td>{{todo.showAge}}</td>
+                  <td><img src="{{todo.image}}" alt="" width="45" class="img-circle"></td>
+
+              
+          </tr>
+      </tbody>
+  </table>
+
+  
+</div>
+
+<app-form *ngIf="ver"></app-form>
